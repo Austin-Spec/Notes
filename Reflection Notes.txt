@@ -1,0 +1,141 @@
+--Trex Game Section?--
+
+6/12/2020
+
+Bug Fixing - 
+We learned how to fix the bugs. One being the Trex being able to jump in air, allowing it to repeatedly go upwards. 
+The way we fixed this by adding &&trex.y>= after if(keydown(space).
+We found out the Y.Position by doing console.log(trex.y), giving us the Y Position to put as the = to.
+
+Indentation -
+By making indents, and putting spaces between lines of code it makes the coding a lot more easier to read and a lot more organized.
+
+6/16/2020
+
+1.Modulo - Gives remainder when 2 numbers are divided.
+
+We created a cloud only when the framecount is the multiple of the number given. Ex: 200 is a multiple of 100, 300 is multple of 100 etc.
+So when the remainder is 0, it indicates that the framecount is fully divisble by the number 100.
+
+2.Depth - It indicaties what is over what.
+
+
+3.Random Number - Depending on the set numbers you put for the random generator to generate it will give you that number. Ex: 1-100, numbers between those can be chosen.
+Or it can be used to decide the position or location of something.
+
+Ex :  cloud.y=randomNumber(280,320)  
+
+6/19/2020
+
+1.String - String is text that is inbetween quotation marks. ("") 
+String can also be combined with other strings, numbers, objects, and etc using string conctenation.
+Ex:
+if(World.frameCount % 80 == 0){
+      var obst1 = createSprite(400,365,10,10)
+      obst1.setAnimation("obstacle" + randomNumber(1,6)) - This makes it much easier so you don't have to repeat this line of code for a other version.
+      obst1.scale=0.5
+      obst1.velocityX= -3
+      obst1.lifetime=134
+
+2.Memory Leakage - When the varible gets created every 80 Frame's and is never destroyed it causes the the application to crash or slow down so you give a lifetime to make sure it gets destroyed by itself after the life time is over.
+
+3.Scoring System - Scoring System can be caculated through the World's Frame Count, and if numbers are in decimals you can use Math.round.
+
+6/23/2020
+
+1.SpriteGroups - We are spawning several cloud and obstacles every few frames, we can group all of these objects into a single group.
+Using GroupProperties we can program the behavior of all of the objects in one go.
+
+Or Rather in other terms, We are using several objects and combining it into one single group, which when using GroupProperties we can program all of the object behavior in one go.
+Ex: Program everythings Y Position, Velocity Etc.
+
+CloudsGroup.setVelocityXEach(0)
+ObstaclesGroup.setVelocityXEach(0)
+
+2.In the Trex game we have two gamestates, Play and End. But other games can have different gameStates.
+
+We also seperated the behavior of objects according to the game state. 
+
+Ex:
+
+if(gameState === PLAY){
+    //move the ground
+    ground.velocityX = -6;
+    
+    if (ground.x < 0){
+      ground.x = ground.width/2;
+    }
+    
+    //jump when the space key is pressed
+    if(keyDown("space") && trex.y >= 359){
+    trex.velocityY = -10 ;
+    }
+   Or
+else if(gameState === END) {
+    ground.velocityX = 0;
+    CloudsGroup.setVelocityXEach(0)
+    ObstaclesGroup.setVelocityXEach(0)
+  }
+
+6/26/2020
+
+1. We solved two bugs, the first one being the Trex collide box was way to big meaning the trex hitbox was hitting the objects but the trex itself was not causing the game to go into END gamestate.
+Using the trex.setCollider("circle",0,0,40); command we changed the collider from a large rectangle to a small circle.
+
+Hitbox/Collider - We learned how to modfiy the hitbox of a object through the use of the the command (object).setCollider("(Shape)",XOffSet,YOffset,W/Radius,L)
+
+Using sprite.debug=(true) it allows you to see the current hitbox of a object.
+
+2. The second bug was the object disapearing even when the the GamState was in gameover where object were suppose to stay in place.
+Using the Group Function combined with the lifetime command we did Group.setLifetimeEach(-1). We put -1 because it allowed a object
+to last forever.
+
+6/30/2020
+
+1. We learned how to make the TREX Auto Jump through making the collider of the TREX larger, and removing the thing required for gameState END to occur since it wss interfearing with the command used to AutoJump the trex.
+
+2. We also learned how to make it so at every 100 points, there will be a sound.
+As well as the speed wil also increase as time went on.
+
+3. We set sounds for jumping, dying, and scoring 100 points.
+
+7/3/2020 
+
+1. Scope - The visibility ot accessibility of a varible.
+Meaning Varibles in "{}" cannot be used outside of the "{}" its in. It can only be used inside the
+"{}".
+
+2. Global Varibles - Varibles accessible to all lines of code/can be used for anything.
+
+3. Using the Visible Coding, we can hide certain things.
+Ex: gameOver.visble = false. This allows us to hide the gameOver text unless we do gameOver.visible=true later in the coding.
+
+4. mousePressedOver - Using this line of code we can make it so our cursor can click on the object
+that this command was used to make touchable/clickbale by the cursor.
+Ex: if(mousePressedOver(Name of the Sprite). So if you were to click the sprite, the thing specified will happen.
+
+5. The code in code.org can be modified so it can be runned directly on our browser.
+It can also be shared with others, including friends and etc.
+
+7/7/2020
+
+1. Function Preload - Loads the assests like images, sounds, etc to a computers memory.
+
+2. index.html - allows the program to know what the primaru/main file is.
+
+also allows the program to know which file is the library.
+
+The library is where all the predefined functions are, the libary we are using is called p5.play.js.
+
+3.style.css - Helps in formatting and styling.
+
+7/12/2020
+
+1. Web Server - A Webserver is used to hold a application, its like a computer that serves web pages.
+Ex: When you eneter google.com, there is a computer somewhere that waits for your request and
+when it gets it it serves or shows it.
+
+2. Switch - In switch statement, the computer evaluates the expression, if the expression equals ‘x’, only the code under case x is run. 
+In case no, cases are satisified, the code under default is run.
+
+switch(expression) { case x: // code block break; case y: // code block break; default: // code block }
