@@ -139,3 +139,47 @@ when it gets it it serves or shows it.
 In case no, cases are satisified, the code under default is run.
 
 switch(expression) { case x: // code block break; case y: // code block break; default: // code block }
+
+7/28/2020 
+
+Functions With Arguments 
+
+1.You can make a fuction work for any number of objects by passing arguments in it.
+
+Ex:
+//Call the function by passing the relevant objects as arguments.
+
+bounceOff(movingRect2, fixedRect2);
+bounceOff(fixedRect,movingRect)
+
+//Function Collison accept two arguments, object 1 and object 2.
+ function collison(object1, object2) {
+    if (object1.x - object2.x < object2.width/2 + object1.width/2
+        && object2.x - object1.x < object2.width/2 + object1.width/2
+        && object1.y - object2.y < object2.height/2 + object1.height/2
+        && object2.y - object1.y < object2.height/2 + object1.height/2) {
+        return true;
+    }
+    else {
+        return false;
+    }
+  }
+  
+  2. Return Type - You can make a function return any data which is of any data type. 
+  Ex:
+   function collison(object1, object2) {
+    if (object1.x - object2.x < object2.width/2 + object1.width/2
+        && object2.x - object1.x < object2.width/2 + object1.width/2
+        && object1.y - object2.y < object2.height/2 + object1.height/2
+        && object2.y - object1.y < object2.height/2 + object1.height/2) {
+        return true;
+         //Here the funtion returns true if the objects are touching.
+    }
+    else {
+    //Here the funtion returns falses if the objects aren't touching.
+        return false;
+    }
+  }
+  //In this example the return type is of boolean.
+  
+ 
