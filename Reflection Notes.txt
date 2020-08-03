@@ -182,4 +182,16 @@ bounceOff(fixedRect,movingRect)
   }
   //In this example the return type is of boolean.
   
+ 8/2/2020 
  
+ 1.Constant - Like a varible, but its value will always stay the same.
+ 
+ 2. Matter.Engine - Is used to creathe the physic engine.
+ 
+ 3. Matter.World - Is used to create the physical world and add objects to it.
+ 
+ 4. Matter.Bodies - Is used to create physical objects which inhabits the world.
+ 
+ 5. isStatic - Is used to decide if a objects moves or not.
+ 
+ 6. restitution - Is used to make objects bounce.
