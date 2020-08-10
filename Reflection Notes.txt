@@ -195,3 +195,41 @@ bounceOff(fixedRect,movingRect)
  5. isStatic - Is used to decide if a objects moves or not.
  
  6. restitution - Is used to make objects bounce.
+ 
+ 8/9/2020 
+ 
+ 1. We learned how to make a class on Visual Coding Studio.
+ 
+ Ex.
+ 
+ class Box {
+  constructor(x, y, width, height) {
+    var options = {
+        'restitution':0.8,
+        'friction':0.3,
+        'density':1.0
+    }
+    this.body = Bodies.rectangle(x, y, width, height, options);
+    this.width = width;
+    this.height = height;
+    
+    World.add(world, this.body);
+  }
+  display(){
+    var pos =this.body.position;
+    var angle = this.body.angle;
+    push()
+    translate(pos.x, pos.y)
+    rotate(angle)
+    rectMode(CENTER);
+    fill(255);
+    rect(0, 0, this.width, this.height);
+    pop();
+  }
+}
+
+2. Translate - Used to capture the change in orgin.
+
+3. rotate - Used tp rotate a body in a certain Angle.
+
+4. push and pop - Used to give a tempoary setting.
