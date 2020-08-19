@@ -270,3 +270,6 @@ Git Commands
   117  git push -u Testing
   118  history
 
+There are three areas when we are working with git: - there is a working directory. - there is a staging area. - there is a repository (local and remote)
+Files are first modified in the working directory - just like we did right now when we modified the sketch.js file. Staging area hosts all the files which are changed before they are committed. A repository hosts all the different committed versions of the files. Every modified file travels from working directory to staging area to a repository.
+We need to add our sketch.js file to the staging area and then commit these changes (just like we did on Github after making changes to a file). Every commit is written with a commit message - so that later you can see the changes you made to the files.
